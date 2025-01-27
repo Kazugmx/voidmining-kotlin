@@ -10,11 +10,15 @@ data class Blockchain(
     @SerialName("nonce")
     var nonce: Int = 0,
     @SerialName("hash")
-    var prevHash: String = "",
-    @SerialName("transaction")
-    val transaction: MutableList<String> = mutableListOf("aaa", "bbb", "ccc").toMutableList()
+    var hash: String = "",
+    @SerialName("transaction") val transaction: MutableList<String> = mutableListOf()
 ) {
-    private fun toJson() = Json.encodeToString(this)
+    private val json: Json
+        get() = Json { encodeDefaults = true }
+
+    private fun toJson(): String {
+        return json.encodeToString(this)
+    }
 
     fun hash(): String {
         val input = toJson()
