@@ -2,7 +2,6 @@ package org.example
 
 import org.example.type.Blockchain
 import kotlinx.coroutines.*
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 import java.util.concurrent.atomic.AtomicBoolean
 import kotlin.system.measureTimeMillis
