@@ -24,7 +24,7 @@ fun mineBlock(
 
         val block = Blockchain(nonce, prevHash, transactions)
         val hash = block.hash()
-        if (hash.startsWith("0000000")) {
+        if (hash.startsWith("000000")) {
             found.set(true)
             println("Block mined in thread num $it! Nonce: $nonce, hash: $hash")
             block.hash = hash
